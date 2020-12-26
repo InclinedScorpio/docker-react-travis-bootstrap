@@ -14,3 +14,15 @@ before_install:
 #Coverage is for terminating terminal once test is finished(Otherwise infinite run=>asks for input p,q,w.....)
 script:
   - docker run -e CI=true testingimage npm run test
+
+deploy: 
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "react-fully-automated"
+  env: "ReactFullyAutomated-env"
+  bucket_name: "elasticbeanstalk-us-east-2-953072891760"
+  bucket_path: "react-fully-automated"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY

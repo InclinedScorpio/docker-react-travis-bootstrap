@@ -9,8 +9,8 @@ services:
 
 #Get Image from development Dockerfile as testing must be there, not in prod(just build present)
 docker_install:
-  - docker build -t TESTINGIMAGE -f Dockerfile.dev .
+  - docker build -t testingimage -f Dockerfile.dev .
 
 #Coverage is for terminating terminal once test is finished(Otherwise infinite run=>asks for input p,q,w.....)
 script:
-  - docker run -e CI=true TESTINGIMAGE npm run test
+  - docker run -e CI=true testingimage npm run test

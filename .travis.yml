@@ -13,4 +13,4 @@ docker_install:
 
 #Coverage is for terminating terminal once test is finished(Otherwise infinite run=>asks for input p,q,w.....)
 script:
-  - docker run ashutosh3309/docker-react-travis-bootstrap npm run test -- --coverage
+  - docker run -e CI=true ashutosh3309/docker-react-travis-bootstrap npm run test

@@ -1,3 +1,4 @@
+# Docker -> Github -> Travis -> AWS ElasticBeanStalk (Complete Automated)
 Pre-requisites:
 1. Docker must be installed on your system(For Windows/MacOs - VM+docker(from official site))
 
@@ -22,3 +23,10 @@ HOW TO USE:
 2. Get this repo on travis
 3. Push code on github - travis will fetch and start running tests (.travis.yml)
     
+
+# Setup ElasticBeanStalk Environment
+==> Remember to : 
+1. not select linux2(it will auto start docker-compose rather than Dockerfile), choose linux.
+2. make a new user (goto IAM -> select users) -> give previledge to "ElasticBeanStalkAllAccess" -> Copy access_id and secret_id -> paste it to environment of Travis(it will enject it inside our program here (looks for $xxx))
+3. Remember to expose port -nginx in Dockerfile ! - Already done : ) 
+

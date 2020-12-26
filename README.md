@@ -30,4 +30,5 @@ HOW TO USE:
 2. make a new user (goto IAM -> select users) -> give previledge to "ElasticBeanStalkAllAccess" -> Copy access_id and secret_id -> paste it to environment of Travis(it will enject it inside our program here (looks for $xxx))
 3. Remember to expose port -nginx in Dockerfile ! - Already done : ) 
 
- 
+# Note:
+Change development branch and then create a pull request once it runs great !

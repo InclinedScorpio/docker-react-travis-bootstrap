@@ -8,7 +8,7 @@ services:
   - docker
 
 #Get Image from development Dockerfile as testing must be there, not in prod(just build present)
-docker_install:
+before_install:
   - docker build -t testingimage -f Dockerfile.dev .
 
 #Coverage is for terminating terminal once test is finished(Otherwise infinite run=>asks for input p,q,w.....)

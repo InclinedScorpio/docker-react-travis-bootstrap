@@ -1,0 +1,16 @@
+language: generic
+
+#Docker needs root access
+sudo: required
+
+#Services going to need in travis
+services: 
+  - docker
+
+#Get Image from development Dockerfile as testing must be there, not in prod(just build present)
+docker_install:
+  - docker build -t ashutosh3309/docker-react-travis-bootstrap -f Dockerfile.dev .
+
+#Coverage is for terminating terminal once test is finished(Otherwise infinite run=>asks for input p,q,w.....)
+script:
+  - docker run ashutosh3309/docker-react-travis-bootstrap npm run test -- --coverage
